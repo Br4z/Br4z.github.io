@@ -10,6 +10,7 @@ header:
     icon: /assets/images/icons/Linux_Windows.png
 categories:
     - Windows
+    - Linux
 tags:
     - guía
 ---
@@ -101,6 +102,6 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 	alias run_c_o='function _run() { echo Executing... && g++ $(find . -name "*.cpp") -o main && ./main "$@" && rm ./main; }; _run'
 	```
 
-	El primer alias permite compilar el archivo que se le pase como primer argumento, además de ejecutar el ejecutable con el resto de argumentos que se le pasen. Por ejemplo, al ejecutar `run_c test.cpp 1 2 3`, estaría compilando el archivo llamado `test.cpp` y ejecutando el ejecutable pasándole los argumentos `1`, `2` y `3`. El segundo alias permite compilar varios archivos (los que estén en el directorio donde ejecutes el programa), luego ejecuta el ejecutable con los argumentos que le pases.
+	El primer alias permite compilar el archivo que se le pase como primer argumento, además de ejecutar el ejecutable con el resto de argumentos que se le pasen. Por ejemplo, al ejecutar `run_c test.cpp 1 2 3`, estaría compilando el archivo llamado `test.cpp` y ejecutando el ejecutable pasándole los argumentos `1`, `2` y `3`. El segundo alias permite compilar varios archivos (los que estén en el directorio donde ejecutes el comando), luego ejecuta el ejecutable con los argumentos que le pases.
 
 > Si estás trabajando en proyectos grandes [**CMake**](https://cmake.org/) es la opción recomendada.
