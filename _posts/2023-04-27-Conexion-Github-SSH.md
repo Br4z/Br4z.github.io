@@ -37,7 +37,9 @@ Para conectarte a tu cuenta de GitHub por medio de SSH debes seguir los siguient
 
 		`ssh-add <private key path>`.
 
-		> Si te sale el error "Could not open a connection to your authentication agent", probablemente el proceso no este corriendo. A la siguiente ejecución del comando debería funcionar.
+		> Si te sale el error "Could not open a connection to your authentication agent", probablemente el proceso no este corriendo. Para ejecutar el proceso ingresa el comando `ssh-agent -s`.
+
+		> Por defecto, la key se agrega automáticamente, pero no está de más asegurarnos.
 
 	2. GitHub.
 
