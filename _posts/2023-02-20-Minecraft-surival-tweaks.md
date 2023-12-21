@@ -18,7 +18,7 @@ tags:
 
 ### Launcher
 
-Recomiendo altamente el launcher[MultiMC](https://multimc.org), por su gestión (en todos los aspectos) de Minecraft.
+Recomiendo altamente el launcher [MultiMC](https://multimc.org), por su gestión (en todos los aspectos) de Minecraft.
 
 > Lamentablemente, para usarlo debes tener una cuenta de Microsoft con Minecraft premium, aunque hay una [versión](https://github.com/UltimMC/Launcher) para no usuarios no premium.
 

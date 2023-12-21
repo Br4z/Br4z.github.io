@@ -23,6 +23,8 @@ Para conectarte a tu cuenta de GitHub por medio de SSH debes seguir los siguient
 	ssh-keygen -t ed25519 -C <email>
 	```
 
+	> "ssh-keygen" es una utilidad del paquete "openssh", por lo que si te aparece que el comando no se encontró, probablemente no tengas instalado este paquete en tu sistema.
+
 	> `ed25519` hace referencia al algoritmo de encriptación.
 
 	Al introducir el comando lo siguiente que te preguntará es la ubicación donde se guardará el archivo (por defecto es `/home/<user>/.ssh/`), finalmente te preguntará por una **frase** (que vendría siendo la contraseña) de tu key.
@@ -37,7 +39,7 @@ Para conectarte a tu cuenta de GitHub por medio de SSH debes seguir los siguient
 
 		`ssh-add <private key path>`.
 
-		> Si te sale el error "Could not open a connection to your authentication agent", probablemente el proceso no este corriendo. Para ejecutar el proceso ingresa el comando `ssh-agent -s`.
+		> Si te sale el error "Could not open a connection to your authentication agent", probablemente el proceso no este corriendo. Para ejecutar el proceso ingresa el comando `eval "$(ssh-agent -s)"`.
 
 		> Por defecto, la key se agrega automáticamente, pero no está de más asegurarnos.
 

@@ -41,6 +41,8 @@ Una vez descargado y descomprimido el **w64devkit**, agregaremos los binarios al
 
 > Lo podemos agregar tanto a las variables de un usuario o del sistema en general, pero recomiendo la segunda opción.
 
+> Todo esto también puede realizarse con el comando `setx /m PATH "...\w64devkit\bin;%PATH%"`.
+
 ## Corriendo programas
 
 Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuración (en los `settings.json` de tu **VSC**):
