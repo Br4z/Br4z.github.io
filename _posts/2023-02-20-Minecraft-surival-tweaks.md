@@ -5,7 +5,7 @@ excerpt: "Algunos tweaks para mejorar tu experiencia en Minecraft survival."
 date: 2023-02-20
 classes: wide
 header:
-    teaser: /assets/images/post teasers/2_Minecraft-survival-tweaks.png
+    teaser: /assets/images/post thumbnails/2_Minecraft-survival-tweaks.png
     teaser_home_page: true
     icon: /assets/images/icons/Minecraft.png
 categories:

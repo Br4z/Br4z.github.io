@@ -5,7 +5,7 @@ excerpt: "Aprende a conectarte por medio de SSH a tu cuenta de GitHub para admin
 date: 2023-04-27
 classes: wide
 header:
-    teaser: /assets/images/post teasers/8_Conexion-Github-SSH.png
+    teaser: /assets/images/post thumbnails/8_Conexion-Github-SSH.png
     teaser_home_page: true
     icon: /assets/images/icons/GitHub.png
 categories:

@@ -5,7 +5,7 @@ excerpt: "Guía básica para instalar Arch."
 date: 2023-02-21
 classes: wide
 header:
-    teaser: /assets/images/post teasers/3_Guia-instalacion-Arch.png
+    teaser: /assets/images/post thumbnails/3_Instalacion-Arch.png
     teaser_home_page: true
     icon: /assets/images/icons/Arch.png
 categories:

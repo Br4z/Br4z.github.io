@@ -1,11 +1,11 @@
 ---
 layout: single
-title:  Como compilar archivos C++
+title:  C++ - Compilación de archivos
 excerpt: "Guía básica para compilar archivos C++ en Windows y Linux."
 date: 2023-02-26
 classes: wide
 header:
-    teaser: /assets/images/post teasers/4_Compilar-C++.png
+    teaser: /assets/images/post thumbnails/4_Compilacion-C++.png
     teaser_home_page: true
     icon: /assets/images/icons/Linux_Windows.png
 categories:
