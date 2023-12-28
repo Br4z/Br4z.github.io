@@ -135,4 +135,4 @@ Visual Studio Code es uno de los editores de texto más populares actualmente, e
 
 > Si quieres consultar mi `settings.json` personal, puedes encontrarlo [aquí](https://gist.github.com/Br4z/618bd822c9277c24bd4e5c63df216e02).
 
-Próximamente, traeré un post dedicado a los shortcuts en este editor. Estos pequeños trucos no solo aceleran tu productividad, sino que también te permiten trabajar de manera más fluida y eficiente.
+Próximamente, traeré un post dedicado a los shortcuts en este editor.
