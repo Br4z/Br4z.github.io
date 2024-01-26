@@ -329,7 +329,7 @@ Por último salimos (`exit`), desmontamos todo `umount -a` o `umount -lR /mnt` y
 
 > Entorno o interfaz en el que nos logueamos.
 
-1. `yay -S ly`.
+1. `pacman -S ly`.
 
 2. `systemctl enable ly.service`.
 

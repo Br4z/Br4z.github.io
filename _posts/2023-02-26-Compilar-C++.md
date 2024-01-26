@@ -55,7 +55,7 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 
 		```JSON
 		"code-runner.executorMap": {
-				"cpp": "echo Executing... && cd $dir && g++ \"$fileName\" -o  main && .\\main.exe && rm main.exe"
+				"cpp": "echo Executing... && cd $dir && g++ \"$fileName\" -o main && .\\main.exe && rm main.exe"
 			}
 		```
 
@@ -63,7 +63,7 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 
 		- `cd $dir`: ir al directorio del archivo que se "ejecutó" (se inició la acción).
 
-		- `g++ \"$fileName\" -o  main`: compilar el archivo y nombrar al ejecutable "main".
+		- `g++ \"$fileName\" -o main`: compilar el archivo y nombrar al ejecutable "main".
 
 		- `.\\main.exe` ejecutar el archivo "main".
 
@@ -72,7 +72,7 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 	- Varios archivos.
 
 		```JSON
-		"code-runner.customCommand": "echo Executing... && cd $dir && g++ (Get-ChildItem -recurse *.cpp) -o main  && .\\main.exe && rm \"main.exe\""
+		"code-runner.customCommand": "echo Executing... && cd $dir && g++ (Get-ChildItem -recurse *.cpp) -o main && .\\main.exe && rm main.exe"
 		```
 
 		La única diferencia con el de archivos individuales es como listamos los archivos que se van a compilar, optando por una búsqueda recursiva con el comando `(Get-ChildItem -recurse *.cpp)`.
@@ -97,13 +97,94 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 		g++ $(find -name "*.cpp") -o main && ./main && rm main
 		```
 
-	Recomiendo asociar un alias a cada de uno de estos dos comandos en la Shell que usas. En mi caso (Bash) tengo los siguientes aliases:
+	En mi caso uso la siguiente función escrita en Bash para compilar y ejecutar mis programas:
 
 	```BASH
-	alias run_c='function _run() { echo Executing... && g++ $1 -o main && shift && ./main "$@" && rm ./main; }; _run'
-	alias run_c_o='function _run() { echo Executing... && g++ $(find . -name "*.cpp") -o main && ./main "$@" && rm ./main; }; _run'
+	function run_c {
+		echo "Executing..."
+
+		if [[ "$1" != "0" ]]; then
+			if [[ -e "$2" ]]; then
+				g++ "$2" -o main
+				shift 2
+			else
+				echo "Error: source file not found"
+				return 1
+			fi
+		else
+			source_files=$(find . -name "*.cpp")
+
+			if [[ -z "$source_files" ]]; then
+				echo "Error: no .cpp files found"
+				return 1
+			fi
+
+			g++ $source_files -o main
+			shift 1
+		fi
+
+		if [[ $? -eq 0 ]]; then
+			./main "$@"
+			rm ./main
+
+			return $?
+		else
+			return 1
+		fi
+	}
 	```
 
-	El primer alias permite compilar el archivo que se le pase como primer argumento, además de ejecutar el ejecutable con el resto de argumentos que se le pasen. Por ejemplo, al ejecutar `run_c test.cpp 1 2 3`, estaría compilando el archivo llamado `test.cpp` y ejecutando el ejecutable pasándole los argumentos `1`, `2` y `3`. El segundo alias permite compilar varios archivos (los que estén en el directorio donde ejecutes el comando), luego ejecuta el ejecutable con los argumentos que le pases.
+	1. Modo `0` (`run_c 0 <cpp file> <execution arguments>`).
+
+		- Compila y ejecuta el archivo C++ especificado (`<cpp file>`).
+
+		- Los argumentos adicionales proporcionados se pasan directamente al programa.
+
+	2. Modo `1` (`run_c 1 <execution arguments>`).
+
+		> Realmente este es el modo que se ejecuta cuando el primer argumento no es `"0"`.
+
+		- Realiza la búsqueda automática y compilación de todos los archivos `.cpp` en el directorio actual.
+
+		- Los argumentos adicionales se consideran como argumentos para el programa resultante.
+
+	El código análogo para PowerShell podría ser el siguiente:
+
+	```PowerShell
+	function run_c {
+		Write-Host "Compiling..."
+
+		if ($args[0] -eq 0) {
+			echo "Entre"
+			if (Test-Path $args[1]) {
+				& "g++" $args[1] -o main
+				$args = $args[2..($args.Length - 1)]
+			} else {
+				Write-Error "Error: source file not found"
+				return 1
+			}
+		} else {
+			$sourceFiles = Get-ChildItem -Filter "*.cpp" -Recurse
+
+			if ($sourceFiles.Count -eq 0) {
+				Write-Error "Error: no .cpp files found"
+				return 1
+			}
+			& "g++" $sourceFiles.FullName -o main
+			$args = $args[1..($args.Length - 1)]
+		}
+
+		if ($LASTEXITCODE -eq 0) {
+			Write-Host "Executing..."
+
+			& .\main.exe $args
+			Remove-Item .\main.exe
+
+			# return $LASTEXITCODE
+		} else {
+			return 1
+		}
+	}
+	```
 
 > Si estás trabajando en proyectos grandes [**CMake**](https://cmake.org/) es la opción recomendada.
