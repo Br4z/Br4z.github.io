@@ -155,9 +155,8 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 		Write-Host "Compiling..."
 
 		if ($args[0] -eq 0) {
-			echo "Entre"
 			if (Test-Path $args[1]) {
-				& "g++" $args[1] -o main
+				& "g++" -Wall -Wextra -Wpedantic -Werror $args[1] -o main
 				$args = $args[2..($args.Length - 1)]
 			} else {
 				Write-Error "Error: source file not found"
@@ -170,14 +169,14 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
 				Write-Error "Error: no .cpp files found"
 				return 1
 			}
-			& "g++" $sourceFiles.FullName -o main
-			$args = $args[1..($args.Length - 1)]
+			& "g++" -Wall -Wextra -Wpedantic -Werror $sourceFiles.FullName -o main
+			$execution_args = $args[1..($args.Length - 1)]
 		}
 
 		if ($LASTEXITCODE -eq 0) {
 			Write-Host "Executing..."
 
-			& .\main.exe $args
+			& .\main.exe $execution_args
 			Remove-Item .\main.exe
 
 			# return $LASTEXITCODE
