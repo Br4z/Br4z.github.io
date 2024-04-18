@@ -21,117 +21,117 @@ Visual Studio Code es uno de los editores de texto más populares actualmente, e
 
 - `terminal.integrated.enablePersistentSessions`: determina si las sesiones de terminal serán persistentes, lo que "conserva" el estado de la terminal aunque hayas cerrado el editor.
 
-	> `false`.
+    > `false`.
 
 - `workbench.statusBar.visible`: determina la visibilidad de la barra de estado (la que está en la parte inferior del editor).
 
-	> `false`.
+    > `false`.
 
 - `workbench.sideBar.location`: determina la localización de la barra lateral.
 
-	> Me gusta tenerla a la derecha (`"right"`) porque no desplaza el contenido del archivo cuando la cierro.
+    > Me gusta tenerla a la derecha (`"right"`) porque no desplaza el contenido del archivo cuando la cierro.
 
 - `workbench.editor.showTabs`: determina la visibilidad de las pestañas (archivos que tengas abiertos).
 
-	> `"single"`, esta opción hace que en la parte superior (donde irían las pestañas), solo se muestre el nombre del archivo que tengo abierto.
+    > `"single"`, esta opción hace que en la parte superior (donde irían las pestañas), solo se muestre el nombre del archivo que tengo abierto.
 
 - `workbench.startupEditor`: determina lo que se va a mostrar al abrir el editor.
 
-	> `"none"`, lo que me deja en la sesión previa.
+    > `"none"`, lo que me deja en la sesión previa.
 
 - `workbench.list.smoothScrolling`: determina si el desplazamiento suave está activado en la barra lateral.
 
-	> `true`.
+    > `true`.
 
 - `workbench.tree.enableStickyScroll`: determina si hay "sticky scroll" (los directorios se quedan mientras te desplazas) en el árbol de archivos (el de la barra lateral).
 
-	> `true`.
+    > `true`.
 
 - `editor.scrollbar.vertical`: determina la visibilidad de la barra vertical de desplazamiento.
 
-	> `"auto"`.
+    > `"auto"`.
 
 - `editor.cursorBlinking`: determina la animación de parpadeo del cursor.
 
-	> `"expand"`.
+    > `"expand"`.
 
 - `editor.cursorSmoothCaretAnimation`: determina si el desplazamiento suave del cursor está activado.
 
-	> `true`.
+    > `true`.
 
 - `editor.linkedEditing`: determina si la edición en etiquetas HTML debería afectar su contraparte (cierre o apertura).
 
-	> `true`.
+    > `true`.
 
 - `editor.detectIndentation`: determina si la indentación se debe ajustar respecto al archivo.
 
-	> `false` (me gusta usar tabs en vez de espacios).
+    > `false` (me gusta usar tabs en vez de espacios).
 
 - `editor.inlayHints.enabled`: determina si las "pistas" están activadas.
 
-	> Lo referente a estas pistas lo podrás encontrar en la GUI de las settings buscando "inlay hints".
+    > Lo referente a estas pistas lo podrás encontrar en la GUI de las settings buscando "inlay hints".
 
-	> `"on"`.
+    > `"on"`.
 
 - `editor.bracketPairColorization.enabled`: determina si el coloreado de paréntesis, corchetes y llaves está activado. Esta opción hará que sus contrapartes (apertura o cierre) se sean del mismo color.
 
-	> `true`.
+    > `true`.
 
 - `editor.guides.bracketPairs`: determina el modo del coloreado de las guías de paréntesis, corchetes y llaves.
 
-	> `"active"` (solo colorea la sección en la que tienes el cursor).
+    > `"active"` (solo colorea la sección en la que tienes el cursor).
 
 - `editor.minimap.enabled`: determina si el mini mapa está activado.
 
-	> `false`.
+    > `false`.
 
 - `editor.glyphMargin`: determina la visibilidad de la barra de símbolos (la que se encuentra al lado de la enumeración de las líneas).
 
-	> `false`, debuggear no es algo que hago muy a menudo.
+    > `false`, debuggear no es algo que hago muy a menudo.
 
 - `editor.overviewRulerBorder`: determina la visibilidad de los bordes de la barra vertical de desplazamiento.
 
-	> `false`.
+    > `false`.
 
 - `editor.hideCursorInOverviewRuler`: determina si la ubicación del cursor respecto a la parte visible del archivo se marca en la barra vertical de desplazamiento.
 
-	> `true`.
+    > `true`.
 
 - `editor.wordWrap`: determina el modo de ajuste de línea del editor.
 
-	`"off"`, me gusta que las líneas se muestren tan largas como son (excepto en los archivos Markdown).
+    `"off"`, me gusta que las líneas se muestren tan largas como son (excepto en los archivos Markdown).
 
 - `editor.insertSpaces`: determina si se deben insertar espacios en lugar de tabulaciones al presionar la tecla de tabulación.
 
-	> `false`.
+    > `false`.
 
 - `editor.stickyScroll.enabled`: determina si hay "sticky scroll" (visibilidad de ciertas líneas en la parte superior del editor mientras te desplazas por el código) en la navegación de un archivo.
 
-	> `true`.
+    > `true`.
 
 - `files.autoSave`: determina el modo de guardado automático de los archivos.
 
-	> `"onFucusChange"`.
+    > `"onFucusChange"`.
 
 - `security.workspace.trust.untrustedFiles`: determina cómo se manejan los archivos no confiables en un espacio de trabajo.
 
-	> `"open"`, los archivos no confiables se abrirán automáticamente en la misma ventana. De forma predeterminada, VS Code te pedirá que confirmes si deseas abrir un archivo no confiable.
+    > `"open"`, los archivos no confiables se abrirán automáticamente en la misma ventana. De forma predeterminada, VS Code te pedirá que confirmes si deseas abrir un archivo no confiable.
 
 - `explorer.confirmDragAndDrop`: determina si se requiere confirmación cuando se arrastran y sueltan archivos en el explorador de archivos.
 
-	> `false`.
+    > `false`.
 
 - `explorer.confirmDelete`: determina si se requiere confirmación cuando se quieren eliminar archivos.
 
-	> `false`.
+    > `false`.
 
 - `files.trimTrailingWhitespace`: determina si se eliminan los espacios en blanco al final de las líneas al guardar un archivo.
 
-	> `true`.
+    > `true`.
 
 - `editor.formatOnPaste`: determina si el contenido pegado se debe formatear.
 
-	> `true`.
+    > `true`.
 
 > Si quieres consultar mi `settings.json` personal, puedes encontrarlo [aquí](https://gist.github.com/Br4z/618bd822c9277c24bd4e5c63df216e02).
 
