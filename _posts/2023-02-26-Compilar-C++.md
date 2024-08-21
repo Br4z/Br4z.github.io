@@ -175,11 +175,11 @@ Vamos a hacer uso de la extensión **Code Runner**, con la siguiente configuraci
             $execution_args = $args[1..($args.Length - 1)]
         }
 
-        if (Test-Path "./main") {
+        if (Test-Path "./main.exe") {
             Write-Host "Executing..."
 
-            & .\main.exe $execution_args
-            Remove-Item .\main.exe
+            & ./main.exe $execution_args
+            Remove-Item ./main.exe
         } else {
             return 1
         }
