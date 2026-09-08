@@ -345,6 +345,6 @@ A music player client connects to the music server and provides the user interfa
 
 - Package: `rmpc`.
 
-- [Documentation](https://rmpc.mierak.dev/next/overview).
+- [Documentation](https://rmpc.mierak.dev/overview).
 
 - Configuration file: [`~/.config/rmpc/rmpc.conf`](https://github.com/braz9LKDI/gray_files/blob/main/rmpc/rmpc.conf).
